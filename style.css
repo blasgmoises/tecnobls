@@ -1,0 +1,311 @@
+:root {
+    --primary: #3b82f6; 
+    --primary-hover: #2563eb;
+    --dark-bg: #0b1121; 
+    --darker-bg: #080c17;
+    --card-bg: #151e32;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --text-main: #334155;
+    --text-light: #94a3b8;
+    --border-color: #e2e8f0;
+}
+
+html { font-size: 15px; }
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body { background-color: var(--light-bg); color: var(--text-main); line-height: 1.5; }
+a { text-decoration: none; }
+
+/* Botones */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 24px; border-radius: 6px; font-weight: 500; font-size: 0.95rem;
+    transition: all 0.3s ease; cursor: pointer;
+}
+.btn-primary { background-color: var(--primary); color: var(--white); border: none; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-outline { background-color: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+.btn-outline-dark { background-color: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.btn-outline-dark:hover { background-color: rgba(59, 130, 246, 0.1); }
+.btn-whatsapp-full { background-color: #10b981; color: var(--white); width: 100%; margin-top: 15px; border: none; }
+.btn-whatsapp-full:hover { background-color: #059669; }
+.btn-whatsapp-main { background-color: #25D366; color: white; border: none; }
+.btn-whatsapp-main:hover { background-color: #128C7E; color: white; }
+
+.float-whatsapp {
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+    background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center;
+    font-size: 35px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+.float-whatsapp i { margin-top: 2px; }
+.float-whatsapp:hover { transform: scale(1.1); background-color: #128C7E; color: #FFF; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background-color: var(--dark-bg); border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky; top: 0; z-index: 1000;
+}
+.logo { display: flex; align-items: center; gap: 10px; color: var(--white); }
+.logo-bold { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+.logo-text { display: flex; flex-direction: column; font-size: 0.8rem; }
+.logo-text strong { font-size: 1rem; font-weight: 600; color: var(--white); }
+.logo-text span { color: var(--text-light); }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
+.nav-links a.active, .nav-links a:hover { color: var(--white); border-bottom: 2px solid var(--primary); padding-bottom: 4px; }
+
+/* Hero Section */
+.hero { background-color: var(--dark-bg); color: var(--white); padding: 0 0 0 5%; }
+.hero-content { display: flex; max-width: 1400px; margin: 0 auto; align-items: stretch; }
+.hero-text { flex: 1; padding-right: 40px; padding-top: 90px; padding-bottom: 90px; display: flex; flex-direction: column; justify-content: center; }
+.hero-image { flex: 1.2; display: flex; }
+.hero-image img { width: 100%; height: 100%; min-height: 550px; object-fit: cover; border-radius: 0; box-shadow: none; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%); mask-image: linear-gradient(to right, transparent 0%, black 25%); }
+
+.badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); width: fit-content; }
+.badge i { color: var(--primary); }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
+.highlight { color: var(--primary); }
+.hero p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 15px; margin-bottom: 40px; }
+.hero-stats { display: flex; gap: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+.stat { display: flex; align-items: center; gap: 12px; }
+.stat-icon { background: rgba(59, 130, 246, 0.1); color: var(--primary); width: 45px; height: 45px; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50%; font-size: 1.2rem; }
+.stat-icon i { margin: 0 !important; padding: 0 !important; line-height: 1; }
+.stat div { display: flex; flex-direction: column; font-size: 0.85rem; }
+.stat div strong { color: var(--white); font-size: 1rem; }
+.stat div span { color: var(--text-light); }
+
+/* Encabezados */
+.section-header { text-align: center; margin-bottom: 50px; }
+.subtitle { color: var(--primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.section-header h2 { font-size: 2.2rem; color: #0f172a; margin-top: 5px; font-weight: 700; }
+.section-header.dark h2 { color: var(--white); }
+
+
+/* =========================================================
+   CARRUSEL DE SERVICIOS (DISEÑO PREMIUM Y LLAMATIVO)
+   ========================================================= */
+.services { padding: 90px 5%; background-color: var(--light-bg); } /* Fondo ligeramente gris para que resalten las tarjetas blancas */
+
+.carousel-container { 
+    position: relative; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 40px; 
+}
+
+.services-track {
+    display: flex;
+    gap: 25px; /* Un poco más de espacio para las sombras */
+    overflow-x: auto;
+    padding: 20px 10px 40px 10px; /* Espacio extra abajo para la sombra al hacer hover */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    width: 100%; 
+}
+.services-track::-webkit-scrollbar { display: none; }
+
+/* --- DISEÑO DE LA TARJETA --- */
+.service-card {
+    min-width: calc(25% - 18.75px); 
+    flex-shrink: 0;
+    background: var(--white);
+    border: none; /* Quitamos el borde duro */
+    border-radius: 16px; /* Bordes más redondeados y modernos */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* Sombra elegante por defecto */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto de rebote muy sutil */
+    position: relative;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse (Hover Dramático) */
+.service-card:hover { 
+    transform: translateY(-12px); /* Se levanta más */
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15); /* Sombra con un tono de tu azul principal */
+}
+
+.service-content { 
+    padding: 30px; 
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    z-index: 2; /* Mantiene el texto por encima */
+}
+
+/* --- ÍCONO MEJORADO (Estilo App Tecnológica) --- */
+.icon-circle { 
+    width: 65px; 
+    height: 65px; 
+    background: linear-gradient(135deg, var(--primary), #0284c7); /* Degradado llamativo */
+    color: var(--white); /* Ícono en blanco */
+    border-radius: 14px; /* Cuadro con bordes curvos en vez de círculo */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.8rem; 
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); /* Sombra brillante para el ícono */
+}
+
+/* --- TEXTOS --- */
+.service-card h3 { 
+    font-size: 1.25rem; 
+    margin-bottom: 12px; 
+    color: #0f172a; 
+    font-weight: 700;
+}
+.service-card p { 
+    font-size: 0.95rem; 
+    color: #475569; 
+    line-height: 1.6;
+}
+
+/* --- IMAGEN CON EFECTO ZOOM --- */
+.service-card img { 
+    width: 100%; 
+    height: 160px; 
+    object-fit: cover; 
+    transition: transform 0.6s ease; /* Transición suave para el zoom */
+}
+
+/* Cuando pasas el mouse por la tarjeta, la imagen hace zoom */
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- BOTONES DEL CARRUSEL --- */
+.carousel-btn { 
+    background-color: var(--white); color: var(--primary); border: none; 
+    width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; 
+    justify-content: center; cursor: pointer; position: absolute; z-index: 10; 
+    transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.15); font-size: 1.2rem; 
+}
+.carousel-btn:hover { background-color: var(--primary); color: var(--white); transform: scale(1.1); }
+.prev-btn { left: 0px; }
+.next-btn { right: 0px; }
+
+/* POR DEFECTO (PC y Monitores): Muestra 4 Tarjetas */
+.service-card {
+    min-width: calc(25% - 15px); 
+    flex-shrink: 0;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 1s ease;
+}
+.service-card:hover { transform: translateY(-5px); }
+.service-content { padding: 25px; flex: 1; }
+.icon-circle { width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+.service-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #0f172a; }
+.service-card p { font-size: 0.9rem; color: #64748b; }
+.service-card img { width: 100%; height: 140px; object-fit: cover; }
+
+.carousel-btn { 
+    background-color: var(--white); color: var(--primary); border: 1px solid var(--border-color); 
+    width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; 
+    justify-content: center; cursor: pointer; position: absolute; z-index: 10; 
+    transition: all 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-size: 1.2rem; 
+}
+.carousel-btn:hover { background-color: var(--primary); color: var(--white); }
+/* Posicionamos las flechas en los bordes extremos del contenedor */
+.prev-btn { left: 0px; }
+.next-btn { right: 0px; }
+
+/* Experiencia */
+.experience { padding: 80px 5%; background-color: var(--dark-bg); color: var(--white); }
+.timeline-container { max-width: 1200px; margin: 0 auto; position: relative; padding-top: 20px; }
+.timeline-line { position: absolute; top: 27px; left: 0; width: 100%; height: 2px; background: rgba(255,255,255,0.1); z-index: 1; }
+.timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 2; }
+.timeline-item { display: flex; flex-direction: column; }
+.timeline-dot { width: 16px; height: 16px; background: var(--primary); border-radius: 50%; border: 3px solid var(--dark-bg); margin: 0 auto 15px 15px; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); }
+.timeline-date { font-size: 0.8rem; color: var(--text-light); margin-bottom: 15px; padding-left: 10px;}
+.timeline-box { display: flex; gap: 15px; align-items: flex-start; }
+.timeline-icon { background: var(--card-bg); width: 40px; height: 40px; min-width: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); color: var(--primary); font-size: 1.1rem; }
+.timeline-info h3 { font-size: 1rem; color: var(--white); margin-bottom: 4px; }
+.timeline-info h4 { font-size: 0.8rem; color: var(--white); font-weight: 500; margin-bottom: 10px; }
+.timeline-info p { font-size: 0.8rem; color: var(--text-light); line-height: 1.4; }
+
+/* Proyectos */
+.projects { padding: 80px 5%; background-color: var(--light-bg); }
+.projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1200px; margin: 0 auto 40px; }
+.project-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+.project-card img { width: 100%; height: 180px; object-fit: cover; }
+.project-info { padding: 20px; }
+.project-info h3 { font-size: 1rem; color: #0f172a; margin-bottom: 8px; }
+.project-info p { font-size: 0.85rem; color: #64748b; }
+.center-btn { text-align: center; }
+
+/* Portafolio Específico */
+.portfolio-hero { background-color: var(--dark-bg); color: var(--white); padding: 100px 5% 60px; text-align: center; }
+.portfolio-hero h1 { font-size: 3rem; margin-bottom: 15px; }
+.portfolio-hero p { color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.portfolio-grid { margin-bottom: 80px; }
+
+/* Footer */
+footer { background-color: var(--dark-bg); color: var(--white); padding: 60px 5% 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+.footer-col h3 { font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+.footer-col p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; line-height: 1.6; }
+.social-links { display: flex; gap: 10px; }
+.social-links a { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--white); transition: background 0.3s; }
+.social-links a:hover { background: var(--primary); }
+.contact-list { list-style: none; }
+.contact-list li { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light); align-items: flex-start; }
+.contact-list i { color: var(--primary); margin-top: 3px; }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-light); font-size: 0.8rem; }
+
+/* --- RESPONSIVE Y TAMAÑOS ADAPTATIVOS --- */
+
+/* Laptops pequeñas (Muestra 3 tarjetas) */
+@media (max-width: 1250px) {
+    .service-card { min-width: calc(33.333% - 13.33px); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tablets (Muestra 2 tarjetas) */
+@media (max-width: 950px) {
+    .service-card { min-width: calc(50% - 10px); }
+    .timeline-line { display: none; }
+    .timeline-item { margin-bottom: 30px; }
+    .timeline-dot { margin: 0 0 10px 0; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Celulares (Muestra 1 tarjeta) */
+@media (max-width: 650px) {
+    .service-card { min-width: calc(100% - 10px); }
+    .carousel-btn { display: none; } /* En celular lo movemos con el dedo */
+    .services-track { scroll-snap-type: x mandatory; }
+    .service-card { scroll-snap-align: center; }
+    
+    .hero-content { flex-direction: column; }
+    .hero { padding: 60px 5%; }
+    .hero-text { padding-right: 0; padding-top: 0; padding-bottom: 0; margin-bottom: 40px; }
+    .hero-image img { -webkit-mask-image: none; mask-image: none; min-height: 300px; border-radius: 12px; }
+    .nav-links, .btn-nav { display: none; }
+    .timeline-grid, .projects-grid, .footer-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-stats { flex-direction: column; gap: 15px; }
+}
